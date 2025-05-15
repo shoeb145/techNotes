@@ -19,6 +19,7 @@ app.use(express.json());
 app.use("/", express.static(path.join(__dirname, "public")));
 app.use("/", require("./routes/root.js"));
 app.use("/users", require("./routes/userRoutes.js"));
+app.use("/notes", require("./routes/noteRoutes.js"));
 app.all("*w", (req, res) => {
   res.status(404);
   if (req.accepts("html")) {
